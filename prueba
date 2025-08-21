@@ -1,1 +1,342 @@
-hola
+package proyectos;
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Traductor {
+	
+public static void main (String []args){
+String textouser=" ";	
+Scanner scanner= new Scanner (System.in);	
+ArrayList<Character> textoesp = new ArrayList<>();
+ArrayList<String> textomorse = new ArrayList<>();
+int key=1;
+while (key != 0) {
+System.out.println(" ");	
+System.out.println("Decide si quieres traducir de español a morse (presiona 1) o de morse a español ( presiona 2). Presiona 0 para salir.");	
+int menu= scanner.nextInt();
+	switch(menu){
+		
+			case 1:
+				
+				System.out.println("Escribe lo que quieras en español para traducirlo a morse. Puedes utilizar letras en mayúscula y en minúscula, pero ningún símbolol. Presiona 0 para salir.");
+				scanner.nextLine();
+				 textouser= scanner.nextLine();
+				
+				for (char letra : textouser.toCharArray()) {
+					textoesp.add(letra);
+				 }
+			modo1(textoesp);
+			break;
+			
+			case 2:
+				System.out.println("Por cada letra que escribas en morse presiona enter, cuando quieras dejar de escribir presiona 0. DEBES UTILIZAR LOS SÍMBOLOS (.-) EXCLUSIVAMENTE");
+				scanner.nextLine();
+				
+				while ( ! textouser .equals("0")) {
+					textomorse.add(textouser);
+					textouser= scanner.nextLine();
+					
+				}
+				modo2( textomorse, textouser);	
+				break;
+				
+			case 0:	
+				key=0;
+				break;
+				
+			default:
+				System.out.println("");
+			break;
+		
+			
+		}
+			
+}	
+			
+	scanner.close();		
+		}	
+public static void modo1(ArrayList <Character> textoesp) {
+			
+		for (int i = 0; i < textoesp.size(); i++) {		
+			
+				
+			switch(textoesp.get(i)) {
+			
+			case ' ':
+				System.out.print(" ");
+				break;
+			case 'a':
+				System.out.print(".-");
+				break;
+			case 'b':
+				System.out.print("-..");
+				break;
+			case 'c':
+				System.out.print("-.-.");
+				break;
+			case 'd':
+				System.out.print("-..");
+				break;
+			case 'e':
+				System.out.print(".");
+				break;
+			case 'f':
+				System.out.print("..-.");
+				break;
+			case 'g':
+				System.out.print("--.");
+				break;
+			case 'h':
+				System.out.print("....");
+				break;
+			case 'i':
+				System.out.print("..");
+				break;
+			case 'j':
+				System.out.print(".---");
+				break;
+			case 'k':
+				System.out.print("-.-");
+				break;
+			case 'l':
+				System.out.print(".-..");
+				break;
+			case 'm':
+				System.out.print("--");
+				break;
+			case 'n':
+				System.out.print("-.");
+				break;
+			case 'ñ':
+				System.out.print("--.--");
+				break;
+			case 'o':
+				System.out.print("---");
+				break;
+			case 'p':
+				System.out.print(".--.");
+				break;
+			case 'q':
+				System.out.print("--.-");
+				break;
+			case 'r':
+				System.out.print(".-.");
+				break;
+			case 's':
+				System.out.print("...");
+				break;
+			case 't':
+				System.out.print("-");
+				break;
+			case 'u':
+				System.out.print("..-");
+				break;
+			case 'v':
+				System.out.print("...-");
+				break;
+			case 'w':
+				System.out.print(".--");
+				break;
+			case 'x':
+				System.out.print("-..-");
+				break;
+			case 'y':
+				System.out.print("-.--");
+				break;
+			case 'z':
+				System.out.print("--..");
+				break;
+			case 'A':
+				System.out.print(".-");
+				break;
+			case 'B':
+				System.out.print("-...");
+				break;
+			case 'C':
+				System.out.print("-.-.");
+				break;
+			case 'D':
+				System.out.print("-..");
+				break;
+			case 'E':
+				System.out.print(".");
+				break;
+			case 'F':
+				System.out.print("..-.");
+				break;
+			case 'G':
+				System.out.print("--.");
+				break;
+			case 'H':
+				System.out.print("....");
+				break;
+			case 'I':
+				System.out.print("..");
+				break;
+			case 'J':
+				System.out.print(".---");
+				break;
+			case 'K':
+				System.out.print("-.-");
+				break;
+			case 'L':
+				System.out.print(".-..");
+				break;
+			case 'M':
+				System.out.print("--");
+				break;
+			case 'N':
+				System.out.print("-.");
+				break;
+			case 'Ñ':
+				System.out.print("--.--");
+				break;
+			case 'O':
+				System.out.print("---");
+				break;
+			case 'P':
+				System.out.print(".--.");
+				break;
+			case 'Q':
+				System.out.print("--.-");
+				break;
+			case 'R':	
+				System.out.print(".-.");
+				break;
+			case 'S':
+				System.out.print("...");
+				break;
+			case 'T':
+				System.out.print("-");
+				break;
+			case 'U':
+				System.out.print("..-");
+				break;
+			case 'V':
+				System.out.print("...-");
+				break;
+			case 'W':
+				System.out.print(".--");
+				break;
+			case 'X':
+				System.out.print("-..-");
+				break;
+			case 'Y':
+				System.out.print("-.--");
+				break;
+			case 'Z':
+				System.out.print("--..");
+				break;
+				
+			default: System.out.print(" CARACTER INVÁLIDO");
+				break;
+			}	
+			
+			}
+			}
+public static void modo2(ArrayList <String> textomorse, String textouser ) {
+	for (int i = 0; i < textomorse.size(); i++) {		
+		
+		
+		switch(textomorse.get(i)) {
+		
+		case " ":
+		System.out.print(" ");
+		break;
+		
+		case ".-":
+		System.out.print("A");
+		break;
+		
+		case "-...":
+		System.out.print("B");	
+			break;
+		case "-.-.":
+			System.out.print("C");
+			break;
+		case "-..":
+			System.out.print("D");
+			break;
+		case ".":
+			System.out.print("E");
+			break;
+		case "..-.":
+			System.out.print("F");
+			break;
+		case "--.":
+			System.out.print("G");
+			break;
+		case "....":
+			System.out.print("H");
+			break;
+		
+		case "..":
+			System.out.print("I");	
+			break;
+		case ".---":
+			System.out.print("J");
+			break;
+		case "-.-":
+			System.out.print("K");
+			break;
+		case ".-..":
+			System.out.print("L");
+			break;
+		case "--":
+			System.out.print("M");
+			break;
+		case "-.":
+			System.out.print("N");
+			break;
+		case "--.--":
+			System.out.print("Ñ");
+			break;
+		case "---":
+			System.out.print("O");
+			break;
+		case ".--.":
+			System.out.print("P");
+			break;
+		case "--.-":
+			System.out.print("Q");
+			break;
+		case  ".-.":	
+			System.out.print("R");
+			break;
+		case"...":	
+			System.out.print("S");
+			break;
+		case"-":	
+			System.out.print("T");
+			break;
+		case "..-":	
+			System.out.print("U");
+			break;
+		case "...-":	
+			System.out.print("V");
+			break;
+		case ".--":
+			System.out.print("W");
+			break;
+		case "-..-":	
+			System.out.print("X");
+			break;
+		case "-.--":
+			System.out.print("Y");
+			break;
+		case"--..":	
+			System.out.print("Z");
+			break;
+			
+			default:
+				System.out.print("-");
+			break;
+			
+			
+	}
+		
+		
+	
+		}
+}
+}
+
