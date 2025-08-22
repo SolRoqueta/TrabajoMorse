@@ -1,0 +1,518 @@
+package proyectos;
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Traductor {
+	
+public static void main (String []args){
+String textouser=" ";	
+Scanner scanner= new Scanner (System.in);	
+ArrayList<Character> textoesp = new ArrayList<>();
+ArrayList<String> textomorse = new ArrayList<>();
+int key=1;
+int contador=0;
+while (key != 0) {
+	System.out.println(" ");	
+	System.out.println("Decide si quieres traducir de español a morse (presiona 1) o de morse a español ( presiona 2).");	
+	System.out.println(" Presiona 0 para salir.");
+	contador=0;
+	int menu= scanner.nextInt();
+	switch(menu){
+		
+			case 1:
+				
+				System.out.println("Escribe lo que quieras en español para traducirlo a morse.  Presiona 0 para salir.");
+				System.out.println("Puedes utilizar letras en mayúscula y en minúscula, pero ningún símbolo.");
+				scanner.nextLine();
+				 textouser= scanner.nextLine();
+				textoesp.clear();
+				for (char letra : textouser.toCharArray()) {
+					textoesp.add(letra);
+				 }
+			modo1(textoesp, contador);
+			break;
+			
+			case 2:
+				System.out.println("Por cada letra que escribas en morse presiona enter, cuando quieras dejar de escribir presiona 0." );
+				System.out.println("DEBES UTILIZAR LOS SÍMBOLOS (.-) EXCLUSIVAMENTE");
+				scanner.nextLine();
+				textomorse.clear();
+				textouser = "";
+				while ( ! textouser .equals("0")) {
+					textouser= scanner.nextLine();
+					if(!textouser.equals("0")) {
+						textomorse.add(textouser);
+					}
+				}
+				modo2( textomorse, textouser, contador);	
+				break;
+				
+			case 0:	
+				key=0;
+				break;
+				
+			default:
+				System.out.println("");
+			break;
+		
+			
+		}
+			
+}	
+			
+	scanner.close();		
+		}	
+public static void modo1(ArrayList <Character> textoesp, int contador) {
+			
+		for (int i = 0; i < textoesp.size(); i++) {		
+			
+				
+			switch(textoesp.get(i)) {
+			
+			case ' ':
+				System.out.print(" ");
+				contador++;
+				break;
+				
+			case 'a':
+				System.out.print(".-");
+				contador++;
+				break;
+				
+			case 'b':
+				System.out.print("-..");
+				contador++;
+				break;
+				
+			case 'c':
+				System.out.print("-.-.");
+				contador++;
+				break;
+				
+			case 'd':
+				System.out.print("-..");
+				contador++;
+				break;
+				
+			case 'e':
+				System.out.print(".");
+				contador++;
+				break;
+			
+			case 'f':
+				System.out.print("..-.");
+				contador++;
+				break;
+			
+			case 'g':
+				System.out.print("--.");
+				contador++;
+				break;
+			
+			case 'h':
+				System.out.print("....");
+				contador++;
+				break;
+			
+			case 'i':
+				System.out.print("..");
+				contador++;
+				break;
+			
+			case 'j':
+				System.out.print(".---");
+				contador++;
+				break;
+			
+			case 'k':
+				System.out.print("-.-");
+				contador++;
+				break;
+			
+			case 'l':
+				System.out.print(".-..");
+				contador++;
+				break;
+			
+			case 'm':
+				System.out.print("--");
+				contador++;
+				break;
+			
+			case 'n':
+				System.out.print("-.");
+				contador++;		
+				break;
+			
+			case 'ñ':
+				System.out.print("--.--");
+				contador++;
+				break;
+			
+			case 'o':
+				System.out.print("---");
+				contador++;
+				break;
+		
+			case 'p':
+				System.out.print(".--.");
+				contador++;
+				break;
+			
+			case 'q':
+				System.out.print("--.-");
+				contador++;
+				break;
+			
+			case 'r':
+				System.out.print(".-.");
+				contador++;
+				break;
+			
+			case 's':
+				System.out.print("...");
+				contador++;
+				break;
+		
+			case 't':
+				System.out.print("-");
+				contador++;
+				break;
+			
+			case 'u':
+				System.out.print("..-");
+				contador++;
+				break;
+	
+			case 'v':
+				System.out.print("...-");
+				contador++;
+				break;
+	
+			case 'w':
+				System.out.print(".--");
+				contador++;
+				break;
+	
+			case 'x':
+				System.out.print("-..-");
+				contador++;
+				break;
+			
+			case 'y':
+				System.out.print("-.--");
+				contador++;
+				break;
+			
+			case 'z':
+				System.out.print("--..");
+				contador++;
+				break;
+			
+			case 'A':
+				System.out.print(".-");
+				contador++;
+				break;
+			
+			case 'B':
+				System.out.print("-...");
+				contador++;
+				break;
+
+			case 'C':
+				System.out.print("-.-.");
+				contador++;
+				break;
+			
+			case 'D':
+				System.out.print("-..");
+				contador++;
+				break;
+	
+			case 'E':
+				System.out.print(".");
+				contador++;
+				break;
+			
+			case 'F':
+				System.out.print("..-.");
+				contador++;
+				break;
+			
+			case 'G':
+				System.out.print("--.");
+				contador++;
+				break;
+			
+			case 'H':
+				System.out.print("....");
+				contador++;
+				break;
+		
+			case 'I':
+				System.out.print("..");
+				contador++;
+				break;
+			
+			case 'J':
+				System.out.print(".---");
+				contador++;
+				break;
+			
+			case 'K':
+				System.out.print("-.-");
+				contador++;
+				break;
+			
+			case 'L':
+				System.out.print(".-..");
+				contador++;
+				break;
+			
+			case 'M':
+				System.out.print("--");
+				contador++;
+				break;
+			
+			case 'N':
+				System.out.print("-.");
+				contador++;
+				break;
+			
+			case 'Ñ':
+				System.out.print("--.--");
+				contador++;
+				break;
+			
+			case 'O':
+				System.out.print("---");
+				contador++;
+				break;
+		
+			case 'P':
+				System.out.print(".--.");
+				contador++;
+				break;
+			
+			case 'Q':
+				System.out.print("--.-");
+				contador++;
+				break;
+			
+			case 'R':	
+				System.out.print(".-.");
+				contador++;
+				break;
+			
+			case 'S':
+				System.out.print("...");
+				contador++;
+				break;
+			
+			case 'T':
+				System.out.print("-");
+				contador++;
+				break;
+			
+			case 'U':
+				System.out.print("..-");
+				contador++;
+				break;
+		
+			case 'V':
+				System.out.print("...-");
+				contador++;
+				break;
+			
+			case 'W':
+				System.out.print(".--");
+				contador++;
+				break;
+			
+			case 'X':
+				System.out.print("-..-");
+				contador++;
+				break;
+			
+			case 'Y':
+				System.out.print("-.--");
+				contador++;
+				break;
+			
+			case 'Z':
+				System.out.print("--..");
+				contador++;
+				break;
+				
+			default: 
+				i=(textoesp.size()-1);
+		        contador ++;
+				System.out.println("ERROR EN CARACTER " + contador );
+				System.out.println("Recuerda que solo puedes utilizar letras");
+				break;
+			
+			}	
+			
+			}
+			}
+public static void modo2(ArrayList <String> textomorse, String textouser, int contador ) {
+	for (int i = 0; i < textomorse.size(); i++) {		
+		
+		
+		switch(textomorse.get(i)) {
+		
+		case " ":
+		System.out.print(" ");
+		contador++;
+		break;
+		
+		case ".-":
+		System.out.print("A");
+		contador++;
+		break;
+		
+		case "-...":
+		System.out.print("B");	
+		contador++;
+		break;
+		
+		case "-.-.":
+		System.out.print("C");
+		contador++;
+		break;
+
+		case "-..":
+			System.out.print("D");
+			contador++;
+			break;
+		
+		case ".":
+			System.out.print("E");
+			contador++;
+			break;
+		
+		case "..-.":
+			System.out.print("F");
+			contador++;
+			break;
+		
+		case "--.":
+			System.out.print("G");
+			contador++;
+			break;
+		
+		case "....":
+			System.out.print("H");
+			contador++;
+			break;
+		
+		case "..":
+			System.out.print("I");	
+			contador++;
+			break;
+	
+		case ".---":
+			System.out.print("J");
+			contador++;
+			break;
+		
+		case "-.-":
+			System.out.print("K");
+			contador++;
+			break;
+		
+		case ".-..":
+			System.out.print("L");
+			contador++;
+			break;
+		
+		case "--":
+			System.out.print("M");
+			contador++;
+			break;
+		
+		case "-.":
+			System.out.print("N");
+			contador++;
+			break;
+		
+		case "--.--":
+			System.out.print("Ñ");
+			contador++;
+			break;
+		
+		case "---":
+			System.out.print("O");
+			contador++;
+			break;
+
+		case ".--.":
+			System.out.print("P");
+			contador++;
+			break;
+		
+		case "--.-":
+			System.out.print("Q");
+			contador++;
+			break;
+		
+		case  ".-.":	
+			System.out.print("R");
+			contador++;
+			break;
+		
+		case"...":	
+			System.out.print("S");
+			contador++;
+			break;
+		
+		case"-":	
+			System.out.print("T");
+			contador++;
+			break;
+	
+		case "..-":	
+			System.out.print("U");
+			contador++;	
+			break;
+
+		case "...-":	
+			System.out.print("V");
+			contador++;
+			break;
+
+		case ".--":
+			System.out.print("W");
+			contador++;
+			break;
+		
+		case "-..-":	
+		System.out.print("X");
+		contador++;
+		break;
+	
+		case "-.--":
+			System.out.print("Y");
+			contador++;
+			break;
+
+		case"--..":	
+			System.out.print("Z");
+			contador++;
+			break;
+			
+			default:
+				i=(textomorse.size()-1);
+				contador++;
+				System.out.println("ERROR EN CARACTER " + contador);
+				System.out.println("");
+				System.out.println("Recuerda que solo puedes utilizar los símbolos (-.)");
+				break;
+			
+			
+	}
+		
+		
+	
+		}
+}
+}
